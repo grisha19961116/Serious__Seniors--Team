@@ -1,0 +1,13 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+img{
+  display: block;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
