@@ -2,12 +2,27 @@ html {
   box-sizing: border-box;
   font-family: 'Montserrat';
 }
-img{
+
+img {
   display: block;
+  max-width: 100%;
+  height: auto;
+
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+// *,
+// *::before,
+// *::after {
+//   box-sizing: inherit;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// ul,
+// ol {
+//   list-style: none;
+// }
+
+// a {
+//   text-decoration: none;
+// }
