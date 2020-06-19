@@ -1,0 +1,21 @@
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin font($fs: 14px, $fw: 400, $lh: 1.2, $ff: $main-font) {
+  font-family: $ff;
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+}
+
+@mixin icon-size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@function rem($px) {
+  @return ($px / 16) + rem;
+}
