@@ -1,5 +1,6 @@
 $main-font: 'Montserrat', sans-serif;
 $accent-color: #ff6b08;
+$white-color: #fff;
 
 html {
   box-sizing: border-box;
@@ -105,7 +106,7 @@ input[type='radio'].visually-hidden {
   background-size: $size;
 }
 
-$maxWidth: 180;
+$maxWidth: 1680;
 @mixin adaptiv-font($pcSize, $mobSize) {
   $addSize: $pcSize - $mobSize;
   $maxWidth: $maxWidth - 320;
@@ -126,7 +127,6 @@ $maxWidth: 180;
   @include for-size(desktop-xl) {
     max-width: 1340px;
   }
-  // 1340зч
 }
 
 .accent-text {
@@ -140,9 +140,9 @@ $maxWidth: 180;
     ),
     url(../images/mobile/registration/registration_bg.jpg);
   @include background-settings;
-  padding-top: 54px;
-  padding-bottom: 58px;
-  color: #fff;
+  padding-top: rem(54);
+  padding-bottom: rem(58);
+  color: $white-color;
 
   &__wrapper {
     text-align: center;
@@ -174,15 +174,22 @@ $maxWidth: 180;
     line-height: rem(20);
     letter-spacing: 0.7px;
     margin: 0 auto 24px;
+    padding-left: rem(30);
+    padding-right: rem(30);
     @include for-size(tablet) {
       font-size: rem(15);
-      max-width: rem(415);
+
     }
     @include for-size(desktop) {
       font-size: rem(18);
       line-height: rem(25);
       margin-bottom: rem(50);
-      max-width: rem(535);
+
+    }
+    &--br {
+      @include for-size(tablet) {
+        display: block;
+      }
     }
   }
   @include for-size(tablet) {
@@ -191,6 +198,8 @@ $maxWidth: 180;
         rgba(17, 21, 23, 0.8)
       ),
       url(../images/tablet/registration/t-registration-background.jpg);
+    padding-top: rem(60);
+    padding-bottom: rem(64);
   }
   @include for-size(desktop) {
     background-image: linear-gradient(
@@ -198,6 +207,8 @@ $maxWidth: 180;
         rgba(17, 21, 23, 0.8)
       ),
       url(../images/desktop/registration/d-registration-background.jpg);
+    padding-top: rem(86);
+    padding-bottom: rem(88);
   }
   @include for-size(desktop-xl) {
     background-image: linear-gradient(
@@ -205,6 +216,8 @@ $maxWidth: 180;
         rgba(17, 21, 23, 0.8)
       ),
       url(../images/desktop-xl/registration/dxl-registration-bg.jpg);
+    padding-top: rem(134);
+    padding-bottom: rem(100);
   }
 }
 
@@ -244,13 +257,14 @@ $maxWidth: 180;
 
   &-input {
     display: block;
-    width: rem(280);
+    width: 80%;
     height: 50px;
     padding-left: 22px;
     border: 1px solid #fff;
     background-color: transparent;
     color: #fff;
     margin: 0 auto;
+    font-size: rem(18);
     &:not(:last-of-type) {
       margin-bottom: 20px;
       @include for-size(desktop) {
@@ -266,6 +280,7 @@ $maxWidth: 180;
     @include for-size(desktop) {
       width: rem(620);
       height: rem(72);
+      font-size: rem(28);
     }
   }
 }
@@ -292,7 +307,7 @@ $maxWidth: 180;
   border: 1px solid red;
 }
 
-.contact__form-btn {
+.modal-btn {
   width: 250px;
   height: 48px;
   color: #fff;
@@ -309,6 +324,7 @@ $maxWidth: 180;
     background-color: transparent;
     border: 1px solid $accent-color;
     color: $accent-color;
+    box-shadow: 5px 5px 10px 0px rgba(255, 107, 8, 1);
     transition: 0.2s;
   }
   @include for-size(desktop) {
