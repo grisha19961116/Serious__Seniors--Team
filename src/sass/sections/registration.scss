@@ -73,6 +73,10 @@ input[type='radio'].visually-hidden {
     @media (min-width: 1230px) {
       @content;
     }
+  } @else if $size == desktop-xl {
+    @media (min-width: 1680px) {
+      @content;
+    }
   }
 }
 
@@ -101,6 +105,15 @@ input[type='radio'].visually-hidden {
   background-size: $size;
 }
 
+$maxWidth: 180;
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(
+    #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
+  );
+}
+
 .container {
   max-width: 280px;
   margin: 0 auto;
@@ -110,6 +123,10 @@ input[type='radio'].visually-hidden {
   @include for-size(desktop) {
     max-width: 1210px;
   }
+  @include for-size(desktop-xl) {
+    max-width: 1340px;
+  }
+  // 1340зч
 }
 
 .accent-text {
@@ -118,14 +135,11 @@ input[type='radio'].visually-hidden {
 
 .registration {
   background-image: linear-gradient(
-      to top,
       rgba(17, 21, 23, 0.8),
       rgba(17, 21, 23, 0.8)
     ),
     url(../images/mobile/registration/registration_bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  @include background-settings;
   padding-top: 54px;
   padding-bottom: 58px;
   color: #fff;
@@ -153,6 +167,7 @@ input[type='radio'].visually-hidden {
       max-width: rem(930);
     }
   }
+
   &__decription {
     font-size: rem(11);
     font-weight: 600;
@@ -172,11 +187,55 @@ input[type='radio'].visually-hidden {
   }
   @include for-size(tablet) {
     background-image: linear-gradient(
-        to top,
         rgba(17, 21, 23, 0.8),
         rgba(17, 21, 23, 0.8)
       ),
       url(../images/tablet/registration/t-registration-background.jpg);
+  }
+  @include for-size(desktop) {
+    background-image: linear-gradient(
+        rgba(17, 21, 23, 0.8),
+        rgba(17, 21, 23, 0.8)
+      ),
+      url(../images/desktop/registration/d-registration-background.jpg);
+  }
+  @include for-size(desktop-xl) {
+    background-image: linear-gradient(
+        rgba(17, 21, 23, 0.8),
+        rgba(17, 21, 23, 0.8)
+      ),
+      url(../images/desktop-xl/registration/dxl-registration-bg.jpg);
+  }
+}
+
+@media (min-resolution: 192dpi) {
+  .registration {
+    background-image: linear-gradient(
+        rgba(17, 21, 23, 0.8),
+        rgba(17, 21, 23, 0.8)
+      ),
+      url(../images/mobile/registration/registration_bg@2x.jpg);
+    @include for-size(tablet) {
+      background-image: linear-gradient(
+          rgba(17, 21, 23, 0.8),
+          rgba(17, 21, 23, 0.8)
+        ),
+        url(../images/tablet/registration/t-registration-background@2x.jpg);
+    }
+    @include for-size(desktop) {
+      background-image: linear-gradient(
+          rgba(17, 21, 23, 0.8),
+          rgba(17, 21, 23, 0.8)
+        ),
+        url(../images/desktop/registration/d-registration-background@2x.jpg);
+    }
+    @include for-size(desktop-xl) {
+      background-image: linear-gradient(
+          rgba(17, 21, 23, 0.8),
+          rgba(17, 21, 23, 0.8)
+        ),
+        url(../images/desktop-xl/registration/dxl-registration-bg@2x.jpg);
+    }
   }
 }
 
