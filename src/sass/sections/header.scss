@@ -1,0 +1,247 @@
+#menu__toggle {
+  opacity: 0;
+}
+
+.menu__btn {
+  // display: flex; /* используем flex для центрирования содержимого */
+  // align-items: center; /* центрируем содержимое кнопки */
+  // position: fixed;
+  // top: 20px;
+  // left: 20px;
+  // width: 26px;
+  // height: 26px;
+  cursor: pointer;
+  // z-index: 1;
+}
+// /* добавляем "гамбургер" */
+.burg {
+  width: 24px;
+  height: 2px;
+  background-color: rgb(24, 25, 29);
+}
+
+.burg::before,
+.burg::after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: rgb(24, 25, 29);
+}
+.burg::before {
+  transform: translateY(-5px);
+}
+.burg::after {
+  transform: translateY(3px);
+}
+
+.menu__box {
+  // display: block;
+  // position: fixed;
+  // visibility: hidden;
+  // top: 0;
+  // right: 100%;
+  // width: 300px;
+  // height: 100%;
+  // margin: 0;
+  transform: translate(-80%, -10%);
+  padding: 20px 0;
+  text-align: center;
+  background-color: #eceff1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+}
+// /* элементы меню */
+// .menu__item {
+//   display: block;
+//   padding: 12px 24px;
+//   color: #333;
+//   font-family: 'Roboto', sans-serif;
+//   font-size: 20px;
+//   font-weight: 600;
+//   text-decoration: none;
+// }
+// .menu__item:hover {
+//   background-color: #cfd8dc;
+// }
+// #menu__toggle:checked ~ .menu__btn > span {
+//   transform: rotate(45deg);
+// }
+// #menu__toggle:checked ~ .menu__btn > span::before {
+//   top: 0;
+//   transform: rotate(0);
+// }
+// #menu__toggle:checked ~ .menu__btn > span::after {
+//   top: 0;
+//   transform: rotate(90deg);
+// }
+// #menu__toggle:checked ~ .menu__box {
+//   visibility: visible;
+//   left: 0;
+// }
+
+a {
+  text-decoration: none;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 58px;
+}
+.header {
+  background-image: url(../../images/mobile/header/m-header-background.jpg);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 34px;
+  padding-bottom: 50px;
+
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 87px;
+  }
+
+  @media (min-resolution: 192dpi) {
+    background-image: url(../../images/mobile/header/m-header-background@2x.jpg);
+  }
+
+  &__titel {
+    font-size: 20px;
+    font-family: 'Montserrat';
+    color: rgb(24, 25, 29);
+    font-weight: bold;
+    line-height: 1.45;
+    margin-bottom: 32px;
+
+    &-wrapper {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__description {
+    font-size: 15px;
+    font-family: 'Montserrat';
+    color: #18191d;
+    line-height: 1.355;
+
+    &--margin {
+      margin-bottom: 39px;
+    }
+
+    &--grey {
+      color: #b9b9b9;
+    }
+
+    &--orange {
+      color: #ff6b08;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 200px;
+
+      &:not(:last-child) {
+        margin-bottom: 22px;
+      }
+    }
+
+    &-icon {
+      fill: rgb(255, 107, 8);
+      width: 31px;
+      height: 35px;
+      transform: translateY(25%);
+
+      &-wrapper {
+        border: solid 2px rgb(255, 107, 8);
+        width: 54px;
+        height: 54px;
+        text-align: center;
+        position: relative;
+      }
+    }
+
+    &-absolute {
+      width: 68px;
+      height: 36px;
+      background-color: #ffffff;
+      position: absolute;
+      transform: translate(70%, 0%);
+    }
+
+    &-text {
+      width: 130px;
+      font-size: 13px;
+      font-family: 'Montserrat';
+      color: rgb(24, 25, 29);
+      font-weight: bold;
+      line-height: 1.538;
+      z-index: 2;
+    }
+  }
+}
+
+.modal-btn {
+  border: none;
+  background-color: rgb(255, 107, 8);
+  outline: none;
+  cursor: pointer;
+  font-size: 11px;
+  font-family: 'Tahoma';
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  width: 246px;
+  height: 44px;
+
+  &:hover {
+    background-color: rgb(211, 85, 38);
+  }
+}
+
+.under {
+  display: block;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+
+  &__icon {
+    fill: #ff6b08;
+    width: 15px;
+    height: 22px;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    font-family: 'Montserrat';
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+
+  &__description {
+    font-size: 5.3px;
+    font-family: 'Myriad Pro';
+    color: #000000;
+    text-transform: uppercase;
+
+    &--orange {
+      color: #ff6b08;
+    }
+  }
+}
