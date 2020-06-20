@@ -174,17 +174,15 @@ $maxWidth: 1680;
     line-height: rem(20);
     letter-spacing: 0.7px;
     margin: 0 auto 24px;
-    padding-left: rem(30);
-    padding-right: rem(30);
+    padding-left: rem(40);
+    padding-right: rem(40);
     @include for-size(tablet) {
       font-size: rem(15);
-
     }
     @include for-size(desktop) {
       font-size: rem(18);
       line-height: rem(25);
       margin-bottom: rem(50);
-
     }
     &--br {
       @include for-size(tablet) {
@@ -297,14 +295,17 @@ $maxWidth: 1680;
 
 .contact__form-input:focus {
   outline: none;
+  border: none;
+  border-bottom: 2px solid $accent-color;
+  transition: 0.2s;
 }
 
 .contact__form-input:required:focus:valid:not(:placeholder-shown) {
-  border: 1px solid green;
+  border-bottom: 2px solid green;
 }
 
 .contact__form-input:required:focus:invalid:not(:placeholder-shown) {
-  border: 1px solid red;
+  border-bottom: 2px solid red;
 }
 
 .modal-btn {
