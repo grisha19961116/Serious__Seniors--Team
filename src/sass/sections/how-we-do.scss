@@ -54,15 +54,15 @@
     font-size: rem(20);
     line-height: rem(33);
     font-weight: 800;
-    margin-bottom: 34px;
+    margin-bottom: rem(34);
     @include for-size(tablet) {
       font-size: rem(26);
-      margin-bottom: 40px;
+      margin-bottom: rem(40);
     }
     @include for-size(desktop) {
       text-align: left;
-      font-size: rem(26);
-      margin-bottom: 40px;
+      font-size: rem(42);
+      line-height: rem(62);
     }
   }
 
@@ -86,19 +86,24 @@
     }
     @include for-size(tablet) {
       max-width: 320px;
-      &:not(:nth-last-child(2)) {
+      &:not(:nth-last-of-type(-n + 2)) {
         margin-bottom: rem(24);
       }
     }
     @include for-size(desktop) {
-      max-width: calc(33.333% - 40px);
+      max-width: 390px;
+      padding-bottom: rem(34);
       &:not(:nth-last-child(2)) {
         margin-bottom: rem(24);
       }
     }
+    @include for-size(desktop-xl) {
+      padding-bottom: rem(54);
+    }
 
     &:hover {
       background-color: $accent-color;
+      transform: translate(-5px, -5px);
       transition: 0.5s;
     }
     &:hover .how-we-do__list-item-title,
@@ -122,6 +127,9 @@
     width: 46px;
     height: 46px;
     margin-bottom: rem(20);
+    @include for-size(desktop) {
+      margin-bottom: rem(28);
+    }
   }
 
   &__list-item-wrapper {
@@ -145,6 +153,15 @@
       background-color: $accent-color;
       margin: 20px auto;
     }
+    @include for-size(desktop) {
+      font-size: rem(18);
+      line-height: rem(28);
+    }
+
+    @include for-size(desktop-xl) {
+      font-size: rem(22);
+      line-height: rem(30);
+    }
   }
 
   &__list-item-description {
@@ -152,5 +169,15 @@
     font-weight: 400;
     color: #858585;
     letter-spacing: 0.55px;
+
+    @include for-size(desktop) {
+      font-size: rem(15);
+      line-height: rem(30);
+    }
+
+    @include for-size(desktop-xl) {
+      font-size: rem(18);
+      line-height: rem(30);
+    }
   }
 }
