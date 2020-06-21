@@ -38,16 +38,22 @@
 
 .how-we-do {
   padding-top: rem(204);
-  padding-bottom: rem(52);
+  padding-bottom: rem(38);
   text-align: center;
 
   @include for-size(tablet) {
     padding-top: rem(230);
+    padding-bottom: rem(26);
   }
 
   @include for-size(desktop) {
     padding-top: rem(164);
-    padding-bottom: rem(52);
+    padding-bottom: rem(80);
+  }
+
+  @include for-size(desktop-xl) {
+    padding-top: rem(164);
+    padding-bottom: rem(110);
   }
 
   &__title {
@@ -70,7 +76,7 @@
     @include for-size(tablet) {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 
@@ -81,21 +87,16 @@
     max-width: 280px;
     margin: 0 auto;
     line-height: rem(20);
-    &:not(:last-of-type) {
-      margin-bottom: rem(16);
-    }
+    margin-bottom: rem(16);
+
     @include for-size(tablet) {
-      max-width: 320px;
-      &:not(:nth-last-of-type(-n + 2)) {
-        margin-bottom: rem(24);
-      }
+      max-width: calc(50% - 30px);
+      margin-bottom: rem(24);
+      padding-bottom: rem(34);
     }
     @include for-size(desktop) {
-      max-width: 390px;
+      max-width: calc(33.333% - 20px);
       padding-bottom: rem(34);
-      &:not(:nth-last-child(2)) {
-        margin-bottom: rem(24);
-      }
     }
     @include for-size(desktop-xl) {
       padding-bottom: rem(54);
