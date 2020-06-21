@@ -41,14 +41,37 @@
   padding-bottom: rem(52);
   text-align: center;
 
+  @include for-size(tablet) {
+    padding-top: rem(230);
+  }
+
+  @include for-size(desktop) {
+    padding-top: rem(164);
+    padding-bottom: rem(52);
+  }
+
   &__title {
     font-size: rem(20);
     line-height: rem(33);
     font-weight: 800;
     margin-bottom: 34px;
+    @include for-size(tablet) {
+      font-size: rem(26);
+      margin-bottom: 40px;
+    }
+    @include for-size(desktop) {
+      text-align: left;
+      font-size: rem(26);
+      margin-bottom: 40px;
+    }
   }
 
   &__list {
+    @include for-size(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
   }
 
   &__list-item {
@@ -61,6 +84,19 @@
     &:not(:last-of-type) {
       margin-bottom: rem(16);
     }
+    @include for-size(tablet) {
+      max-width: 320px;
+      &:not(:nth-last-child(2)) {
+        margin-bottom: rem(24);
+      }
+    }
+    @include for-size(desktop) {
+      max-width: calc(33.333% - 40px);
+      &:not(:nth-last-child(2)) {
+        margin-bottom: rem(24);
+      }
+    }
+
     &:hover {
       background-color: $accent-color;
       transition: 0.5s;
