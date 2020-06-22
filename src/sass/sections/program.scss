@@ -5,14 +5,14 @@
   font-family: "Montserrat", sans-serif;
   padding-left: 40px;
   padding-right: 40px;
-  padding-bottom: 430px;
-  background-image: url(../images/mobile/program/m-program.png);
-  background-position: top;
-  background-position: right 83.5%;
+  padding-bottom: 150px;
   background-repeat: no-repeat;
-
+  background-position: 100% 100%;
+  background-image:url(../images/mobile/program/m-program.png) ;
   @media (min-resolution: 192dpi) {
+    .program{
     background-image: url(../images/mobile/program/m-program@2x.png);
+    }
   }
 
   &__title {
@@ -109,11 +109,14 @@
 
 @media (min-width:768px) {
   .program {
+    padding-bottom: 170px;
     background-image: url(../images/tablet/program/t-program.png);
-    background-position: right 71%;
+    background-position:100% 100%;
 
     @media (min-resolution: 192dpi) {
-      background-image: url(../images/mobile/program/m-program@2x.png);
+      .program{
+        background-image: url(../images/mobile/program/m-program@2x.png);
+      }
     }
 
     &__title {
@@ -147,11 +150,14 @@
 
 @media (min-width:1280px) {
   .program {
+    padding-bottom: 300px;
     background-image: url(../images/desktop/program/d-program.png);
-    background-position: left 71%;
+    background-position:0% 85%;
 
     @media (min-resolution: 192dpi) {
+      .program{
       background-image: url(../images/desktop/program/d-program@2x.png);
+      }
     }
 
     &__for-tablet-paddings {
@@ -217,12 +223,20 @@
     &__list-item::before {
       content: "";
       visibility: hidden;
+      }
     }
   }
 
   @media (min-width:1680px) {
     .program {
-
+      background-image: url(../images/desktop-xl/program/xl-program.png);
+      background-position:0% 100%;
+  
+      @media (min-resolution: 192dpi) {
+        .program{
+        background-image: url(../images/desktop-xl/program/xl-program@2x.png);
+        }
+      }
       &__list,
       &__title {
         padding-left: 184px;
@@ -238,13 +252,5 @@
         font-size: 21px;
         line-height: 1.4;
       }
-
-      background-image: url(../images/desktop-xl/program/xl-program.png);
-      background-position: left 82%;
-
-      @media (min-resolution: 192dpi) {
-        background-image: url(../images/desktop-xl/program/xl-program@2x.png);
-      }
     }
   }
-}

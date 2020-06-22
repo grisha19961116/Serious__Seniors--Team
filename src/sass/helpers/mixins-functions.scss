@@ -68,3 +68,22 @@ $maxWidth: 1680;
     #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
   );
 }
+@mixin for-size($size) {
+  @if $size == mobile {
+    @media (max-width: 569px) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (min-width: 570px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: 1230px) {
+      @content;
+    }
+  } @else if $size == desktop2 {
+      @media (min-width: 1680px) {
+        @content;
+      }
+    }
+}
