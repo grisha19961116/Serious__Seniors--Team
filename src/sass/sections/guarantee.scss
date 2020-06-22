@@ -2,7 +2,7 @@
     width: 320px;
     margin: 0 auto;
     padding: 50px 0px 30px 0px;
-    background-color: #ffffff;
+    background-color: $white-color;
     letter-spacing: 1px;
     &__list::before{
         display: block;
@@ -22,11 +22,11 @@
         left: -34px;
     }
     &__svg{
-        fill: #ff6b08;
+        fill: $accent-color;
         width: 16px;
         height: 16px;
         &:hover{
-            fill:rgb(32, 206, 9);
+            fill:$green-color;
             border-radius: 50%;
             box-shadow: 0px 0px 3px 6px rgba(131, 119, 68, 0.808);
         }
@@ -36,7 +36,7 @@
         margin: 0 auto;
         margin-bottom: 26px;
         font-size: 20px;
-        color: #111517;
+        color: $dark-color-first;
         font-weight: 800;
         text-align: center;
     }
@@ -48,13 +48,13 @@
     &__list-item{
         position: relative;
         font-size: 11px;
-        color: #18191d;
+        color:$dark-color-second;
         font-weight: 500;
         &:not(:last-child){
             margin-bottom: 26px;
         }
         &-description-span--orange-color{
-            color:  #ff6b08;
+            color: $accent-color;
         }
     }
 }
