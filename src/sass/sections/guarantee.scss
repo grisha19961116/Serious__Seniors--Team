@@ -1,7 +1,8 @@
 .guarantee{
-    width: 320px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
-    padding: 50px 0px 30px 0px;
+    padding-top: 10%;
     background-color: $white-color;
     letter-spacing: 1px;
     &__list::before{
@@ -10,10 +11,10 @@
         position: absolute;
         top: 30px;
         left: 23px;
-        width: 1px;
-        height: 226px;
+        width: 2px;
+        height: 67%;
         background-image: linear-gradient(180deg, #959595, #959595 75%, transparent 75%, transparent 100%);
-        background-size: 20px 3px;
+        background-size: 20px 4px;
         border: none;
     }
     &__link-icon{
@@ -42,7 +43,7 @@
     }
     &__tube{
         position: relative;
-        background-color: #f1f1f1;
+        background-color: $white-dark-color;
         padding: 26px 26px 26px 50px ;
     }
     &__list-item{
@@ -60,12 +61,14 @@
 }
 @media (min-width:768px){
     .guarantee{
-        width: 688px;
-        padding: 64px 0px 30px 0px;
+        width: 90%;
+        padding-top: 6%;
+        &__list-item{
+            font-size: 13px;
+            max-width: 770px;}
         &__list::before{
             top: 40px;
             left: 39px;
-            height: 156px;
         }
         &__link-icon{
             left: -68px;
@@ -82,12 +85,14 @@
 }
 @media (min-width:1280px){
     .guarantee{
-        width: 1200px;
-        padding: 140px 0px 50px 0px;
+        &__list-item{
+            font-size: 17px;
+            max-width: 1000px;
+        }
         &__list::before{
             top: 70px;
             left: 96px;
-            height: 282px;
+            height: 65%;
         }
         &__svg{
             width: 30px;
@@ -113,14 +118,17 @@
 }
 @media (min-width:1680px){
     .guarantee{
-        width:1340px ;
+        width:80%;
+        &__list-item{
+            font-size: 21px;
+        }
         &__list::before{
             top: 70px;
-            left: 125px;
+            left: 124px;
             height: 282px;
         }
         &__tube{
             padding: 60px 180px 50px 180px;
         }
-    }
-}
+     }
+ }

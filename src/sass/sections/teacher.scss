@@ -99,7 +99,7 @@
 
 /* desc */
 .teacher{
-    padding-top: 150px;
+    padding-top: 130px;
 }
 .c-desc {
     padding-top: 15px;
@@ -124,7 +124,7 @@
 
 @include for-size(tablet) {
     .teacher{
-        padding-top: 250px;
+        padding-top: 150px;
     }
     .c-flex {
         flex-direction: row;
@@ -173,7 +173,9 @@
 }
 
 @include for-size(desktop) {
-
+    .teacher{
+        padding-top: 50px;
+    }
     .c-infobox {
 
         &__label {
