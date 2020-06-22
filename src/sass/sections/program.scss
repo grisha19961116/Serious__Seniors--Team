@@ -5,9 +5,15 @@
   font-family: "Montserrat", sans-serif;
   padding-left: 40px;
   padding-right: 40px;
-  padding-bottom: 434px;
+  padding-bottom: 430px;
+  background-image: url(../images/mobile/program/m-program.png);
+  background-position: top;
+  background-position: right 83.5%;
+  background-repeat: no-repeat;
 
-
+  @media (min-resolution: 192dpi) {
+    background-image: url(../images/mobile/program/m-program@2x.png);
+  }
 
   &__title {
     text-align: center;
@@ -74,7 +80,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(-34px, 35.5px);
+    transform: translate(-49px, 35.5px);
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -82,14 +88,18 @@
     background-color: rgba(255, 107, 8, 1);
   }
 
-  &__list-item:not(:last-child)::before {
+  &__list-item::before {
     content: "";
     display: block;
     width: 2px;
-    height: 402px;
+    height: 400px;
     background-color: #546264;
     position: absolute;
-    transform: translate(-30px, 42px);
+    transform: translate(-45px, 44px);
+  }
+
+  &__list-item:last-child::before {
+    visibility: hidden;
   }
 
   &__for-tablet-paddings {
@@ -99,13 +109,20 @@
 
 @media (min-width:768px) {
   .program {
+    background-image: url(../images/tablet/program/t-program.png);
+    background-position: right 71%;
+
+    @media (min-resolution: 192dpi) {
+      background-image: url(../images/mobile/program/m-program@2x.png);
+    }
+
     &__title {
       text-align: left;
       font-size: 26px;
     }
 
     &__list {
-      padding-left: 94px;
+      padding-left: 135px;
     }
 
     &__for-tablet {
@@ -123,109 +140,111 @@
 
     &__list-item:not(:last-child)::before {
       content: "";
-      height: 230px;
+      height: 220px;
+    }
+  }
+}
+
+@media (min-width:1280px) {
+  .program {
+    background-image: url(../images/desktop/program/d-program.png);
+    background-position: left 71%;
+
+    @media (min-resolution: 192dpi) {
+      background-image: url(../images/desktop/program/d-program@2x.png);
+    }
+
+    &__for-tablet-paddings {
+      width: 200px;
+    }
+
+    &__title {
+      font-size: 42px;
+      font-weight: bold;
+      line-height: 1.489;
+      letter-spacing: 0.03em;
+    }
+
+    &__list-item-semester-name {
+      font-size: 19px;
+      line-height: 1.535;
+      letter-spacing: 0.1em;
+      justify-content: space-between;
+      padding-top: 40px;
+    }
+
+    &__list-item-list-title {
+      font-size: 18px;
+      line-height: 1.62;
+      font-weight: 400;
+    }
+
+    &__list-item-list-name {
+      font-size: 18.75px;
+      line-height: 1.556;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 0 0 0;
+    }
+
+    &__for-tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__for-tablet-paddings,
+    &__list-item-semester-name:not(:last-child) {
+      margin-left: 0px;
+      margin-right: 66px;
+    }
+
+    &__list-item-semester-name::before {
+      content: '';
+      transform: translate(0px, -6px);
+    }
+
+    &__title-wrapper {
+      display: flex;
+      width: 100%;
+      height: 90px;
+      border-bottom: 2px solid #546264;
+    }
+
+    &__list-item::before {
+      content: "";
+      visibility: hidden;
     }
   }
 
+  @media (min-width:1680px) {
+    .program {
+
+      &__list,
+      &__title {
+        padding-left: 184px;
+        padding-right: 184px;
+      }
+
+      &__title {
+        font-size: 46px;
+        line-height: 1.365;
+      }
+
+      &__list-item-list-title {
+        font-size: 21px;
+        line-height: 1.4;
+      }
+
+      background-image: url(../images/desktop-xl/program/xl-program.png);
+      background-position: left 82%;
+
+      @media (min-resolution: 192dpi) {
+        background-image: url(../images/desktop-xl/program/xl-program@2x.png);
+      }
+    }
+  }
 }
-
-// @include for-size(tablet) {
-//   background-image: url(../images/program/program-t.png);
-//   background-position: right 80.08%;
-// }
-
-// @include for-size(desktop) {
-//   background-image: url(../images/program/program-d.png);
-//   background-position: left 70%;
-// }
-
-// @include for-size(hd-desktop) {
-//   background-image: url(../images/program/program-xd.png);
-//   background-position: left 96.1%;
-// }
-
-// @media (min-resolution: 144dpi) {
-//   background-image: url(../images/program/program-m@1.5x.png);
-
-//   @include for-size(tablet) {
-//     background-image: url(../images/program/program-t@1.5x.png);
-//   }
-
-//   @include for-size(desktop) {
-//     background-image: url(../images/program/program-d@1.5x.png);
-//   }
-
-//   @include for-size(hd-desktop) {
-//     background-image: url(../images/program/program-xd@1.5x.png);
-//   }
-// }
-
-// @media (min-resolution: 192dpi) {
-//   background-image: url(../images/program/program-m@2x.png);
-
-//   @include for-size(tablet) {
-//     background-image: url(../images/program/program-t@2x.png);
-//   }
-
-//   @include for-size(desktop) {
-//     background-image: url(../images/program/program-d@2x.png);
-//   }
-
-//   @include for-size(hd-desktop) {
-//     background-image: url(../images/program/program-xd@2x.png);
-//   }
-// }
-
-// @media (min-width:1280px) {
-//   .guarantee {
-//     width: 1200px;
-//     padding: 140px 0px 50px 0px;
-
-//     &__list::before {
-//       top: 70px;
-//       left: 96px;
-//       height: 282px;
-//     }
-
-//     &__svg {
-//       width: 30px;
-//       height: 30px;
-//     }
-
-//     &__title {
-//       font-size: 46px;
-//       letter-spacing: 2px;
-//     }
-
-//     &__tube {
-//       padding: 60px 130px 50px 150px;
-//     }
-
-//     &__list-item {
-//       font-size: 21px;
-
-//       &:not(:last-child) {
-//         margin-bottom: 40px;
-//       }
-
-//     }
-
-//   }
-
-// }
-
-// @media (min-width:1680px) {
-//   .guarantee {
-//     width: 1340px;
-
-//     &__list::before {
-//       top: 70px;
-//       left: 125px;
-//       height: 282px;
-//     }
-
-//     &__tube {
-//       padding: 60px 180px 50px 180px;
-//     }
-//   }
-// }
