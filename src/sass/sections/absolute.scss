@@ -5,30 +5,31 @@
     width: 85%;
     min-height: 26.25rem;
     filter: drop-shadow(0.25rem 0.433rem 0.6563rem rgba(29,29,27,0.04));
-    background-color: #ffffff;
+    background-color:$white-color;
 &__title{
     position: absolute;
     z-index: 10;
-    color: #ffffff;
+    color: $white-color;
     font-size: 1.25rem;
 }
     &-problems__title{
         &--item{
-            color:  #ff6b08;
+            color:$accent-color;
         }
         width: 60%;
         top: 4%;
         left: 6.15%;
     }
     &-programe__title{
-        width: 40%;
+        text-align: center;
+        width: 25%;
         top: 4%;
-        left: 6.15%;
+        left: 7.5%;
     }
     &-container{
         width: 100%;
         min-height: 25rem;
-        background-color: #111517;
+        background-color:$dark-color-first;
         position: relative;
     }
     &-programe__list{
@@ -51,7 +52,7 @@
         left: 0;
         font-size: 0.8125rem;
         letter-spacing: 0.0625rem;
-        color: #18191d;
+        color:$dark-color-second;
         font-weight: 700;
         &:not(:last-child){
             margin-bottom: 1.25rem;
@@ -64,7 +65,7 @@
             display: block;
             width: 1.5625rem;
             height: 0.125rem;
-            background-color: #ff6b08;
+            background-color:$accent-color;
         }
         &::after{
             content: counter(item, decimal-leading-zero) " "; 
@@ -72,12 +73,29 @@
             display: block;
             position: absolute;
             left: 2.25rem;
-            top: -1.25rem;
+            top: -1rem;
         }
     }
 }
 @media (min-width: 768px){
     .absolute{
+            &-programe__title{
+        text-align: center;
+        width: 50%;
+        top: 4%;
+        left: 25%;
+    }
+        &__element{
+            &::before{
+                width: 1.875rem;
+                height: 0.1875rem;
+            }
+            &::after{ 
+                font-size: 600;
+                counter-increment: item;
+                top: -1.3rem;
+            }
+        }
         min-height: 32.75rem;
         display: flex;
         flex-wrap: wrap;
@@ -89,10 +107,6 @@
         }
         &__title{
             font-size: 1.625rem;
-        }
-        &-programe__title{
-            left: 38%;
-            top: 6%;
         }
     }
 }
@@ -130,7 +144,7 @@
         &__element{
             width: 28%;
             font-size: 1.3125rem;
-            color: #111517;
+            color: $dark-color-first;
             margin-right: 3.125rem;
             &:nth-child(3n){
                 margin-right: 0rem;

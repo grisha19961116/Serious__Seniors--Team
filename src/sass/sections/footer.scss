@@ -14,10 +14,10 @@
 &__telephone{
     &-link:hover{
         & .footer__telephone{
-            color: rgb(32, 206, 9);
+            color: $green-color;
             box-shadow: 10px 5px 5px rgb(7, 189, 7);
             &-icon{
-                fill:  #111517;
+                fill:$dark-color-first;
                 width: 30px;
                 height: 30px;
             }
@@ -28,7 +28,7 @@
     min-width: 250px;
     font-size: 18px;
     letter-spacing: 1px;
-    color: #111517;
+    color: $dark-color-first;
     font-weight: 600;    
     &-icon{
         width: 21px;
@@ -42,7 +42,7 @@
         align-items: center;
         width: 100%;
         height: 100px;
-        background-color: #111517;
+        background-color: $dark-color-first;
         &-text{
             font-size: 11px;
             letter-spacing: 1px;
