@@ -37,17 +37,16 @@
 }
 
 .how-we-do {
-  padding-top: rem(250);
+  padding-top: rem(280);
   padding-bottom: rem(38);
   text-align: center;
 
   @include for-size(tablet) {
-    padding-top: rem(330);
+    padding-top: rem(400);
     padding-bottom: rem(26);
   }
 
   @include for-size(desktop) {
-    padding-top: rem(330);
     padding-bottom: rem(80);
   }
 
