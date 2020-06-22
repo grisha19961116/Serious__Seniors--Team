@@ -121,11 +121,7 @@
         font-weight: 400;
     }
 }
-
 @include for-size(tablet) {
-    .teacher{
-        padding-top: 350px;
-    }
     .c-flex {
         flex-direction: row;
         &__left {
@@ -171,7 +167,6 @@
         line-height: 20px;
     }
 }
-
 @include for-size(desktop) {
     .teacher{
         padding-top: 50px;
@@ -247,6 +242,16 @@
         }
     }
     
+}
+@media (min-width:600px) and  (max-width:1280px){
+    .teacher{
+        padding-top: 350px;
+    }
+}
+@media(min-width:1280px){
+    .teacher{
+        padding-top: 50px;
+    }
 }
 
 @include for-size(desktop2) {
