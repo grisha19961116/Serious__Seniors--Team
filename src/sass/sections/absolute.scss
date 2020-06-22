@@ -6,6 +6,11 @@
     min-height: 26.25rem;
     filter: drop-shadow(0.25rem 0.433rem 0.6563rem rgba(29,29,27,0.04));
     background-color:$white-color;
+    &-programe__img{
+        position: absolute;
+        top: -18%;
+        right: 0%;
+    }
 &__title{
     position: absolute;
     z-index: 10;
@@ -22,19 +27,19 @@
     }
     &-programe__title{
         text-align: center;
-        width: 25%;
-        top: 4%;
+        width: 40%;
+        top: -25%;
         left: 7.5%;
     }
     &-container{
         width: 100%;
-        min-height: 25rem;
+        height: 18.75rem;
         background-color:$dark-color-first;
         position: relative;
     }
     &-programe__list{
         position: absolute;
-        top: 20%;
+        top: -8%;
         left: 7.5%;
         z-index: 5;
     }
@@ -79,6 +84,12 @@
 }
 @media (min-width: 768px){
     .absolute{
+        &-container{
+            height: 15.625rem;
+        }
+        &-programe__list{
+            top: 22%;
+        }
             &-programe__title{
         text-align: center;
         width: 50%;
@@ -132,8 +143,14 @@
     .absolute{
         min-height: 36.75rem;
         padding: 6.25rem 3.125rem;
+        &-programe__list{
+            top: -57%;
+        }
+            &-programe__title{
+        top: -80%;
+    }
         &-container{
-            min-height: 34.375rem;
+            height: 23rem;
             &__for-beckground{
                 background-image: url(../images/tablet/problems/t-problems-background@2x.png);
             }
@@ -158,6 +175,6 @@
         &__element{
             font-size: 1.6125rem;
             margin-right: 4.375rem;
-        }
-    }
+         }
+     }
 }
