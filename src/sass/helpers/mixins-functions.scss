@@ -4,11 +4,17 @@
   position: $pos;
 }
 
+@mixin pseudo($width, $height, $content: '') {
+  content: $content;
+  width: $width;
+  height: $height;
+}
+
 @mixin font($fs: 14px, $fw: 400, $lh: 1.2, $ff: $main-font) {
-  font-family: $ff;
   font-size: $fs;
   font-weight: $fw;
   line-height: $lh;
+  font-family: $ff;
 }
 
 @mixin icon-size($width, $height) {
@@ -44,11 +50,6 @@
   justify-content: $justify;
 }
 
-@mixin pseudo($width, $height, $content: '') {
-  content: $content;
-  width: $width;
-  height: $height;
-}
 
 @mixin background-settings(
   $repeat: no-repeat,
@@ -86,4 +87,12 @@ $maxWidth: 1680;
         @content;
       }
     }
+}
+@mixin font-and-width ($font , $width){
+  font-size: $font;
+  width: $width;
+}
+@mixin menu-checked($trans, $backcolor) {
+  transform: $trans;
+  background-color: $backcolor;  
 }
