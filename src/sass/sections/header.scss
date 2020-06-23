@@ -1,6 +1,5 @@
 .navigation {
-  display: flex;
-  justify-content: space-between;
+  @include flexible(space-between);
   align-items: baseline;
   margin-bottom: 58px;  
 }
@@ -9,20 +8,17 @@
   opacity: 0;
 
   &:checked ~ .menu__btn > .burg {
-    transform: rotate(45deg);
-    background-color: $white-dark-color;
+    @include menu-checked(rotate(45deg), $white-dark-color);
   }
 
   &:checked ~ .menu__btn > .burg::before {
     top: 0;
-    transform: rotate(0);
-    background-color: $white-dark-color;
+    @include menu-checked(rotate(0), $white-dark-color);
   }
 
   &:checked ~ .menu__btn > .burg::after {
     top: 0;
-    transform: rotate(90deg);
-    background-color: $white-dark-color;
+    @include menu-checked(rotate(90deg), $white-dark-color);
   }
 
   &:checked ~ .burger__menu-wrapper {
@@ -50,15 +46,12 @@
 }
 
 .burg {
-  width: 24px;
-  height: 2px;
+  @include icon-size(24px, 2px);
   background-color: $dark-color-second;
 
   &::before {
     display: block;
-    content: '';
-    width: 24px;
-    height: 2px;
+    @include pseudo(24px, 2px);
     background-color: $dark-color-second;
     position: absolute;
     top: -5px;
@@ -67,9 +60,7 @@
   }
   &::after {
     display: block;
-    content: '';
-    width: 24px;
-    height: 2px;
+    @include pseudo(24px, 2px);
     background-color: $dark-color-second;
     position: absolute;
     top: 5px;
@@ -86,8 +77,7 @@
       visibility: hidden;
       top: 0;
       right: 0;
-      width: 100%;
-      height: 100%;
+      @include icon-size(100%, 100%);
       padding-top: 115px;
       text-align: center;
       background-color: rgba(0, 0, 0, 0.86);
@@ -96,10 +86,8 @@
 
     &-link {
       display: block;
-      font-size: 18px;
-      font-family: $second-font;
+      @include font(18px, bold, 1.2, $second-font);
       color: $white-color;
-      font-weight: bold;
       text-align: left;
       letter-spacing: 0.1em;
     }
@@ -117,12 +105,9 @@
     &-btn {
       border: solid 2px $white-color;
       background: transparent;
-      width: 247px;
-      height: 45px;
-      font-size: 11px;
-      font-family: $second-font;
+      @include icon-size(247px, 45px);
+      @include font(11px, bold, 1.2, $second-font);
       color: $white-color;
-      font-weight: bold;
       text-transform: uppercase;
 
       &:hover {
@@ -152,20 +137,15 @@
   }
 
   &__titel {
-    font-size: 20px;
-    font-family: $main-font;
+    @include font(20px, bold, 1.45, $main-font);
     color: $dark-color-second;
-    font-weight: bold;
-    line-height: 1.45;
     margin-bottom: 32px;
     letter-spacing: 0.03em;
   }
 
   &__description {
-    font-size: 15px;
-    font-family: $main-font;
+    @include font(15px, bold, 1.355, $main-font);
     color: $dark-color-second;
-    line-height: 1.355;
     letter-spacing: 0.05em;
 
     &--margbot1{
@@ -178,6 +158,7 @@
 
     &--grey {
       color: $grey-first;
+      font-weight: 500;
     }
 
     &--orange {
@@ -189,9 +170,8 @@
     display: flex;
 
     &-item {
-      display: flex;
+      @include flexible(space-between);
       align-items: center;
-      justify-content: space-between;
       width: 200px;
 
       &:hover .header__list-icon{
@@ -205,16 +185,14 @@
 
     &-icon {
       fill: $accent-color;
-      width: 31px;
-      height: 35px;
+      @include icon-size(31px, 35px);
       transform: translateY(25%);
 
       transition: fill 0.2s linear;
 
       &-wrapper {
         border: solid 2px $accent-color;
-        width: 54px;
-        height: 54px;
+        @include icon-size(54px, 54px);
         text-align: center;
         position: relative;
 
@@ -223,8 +201,7 @@
     }
 
     &-absolute {
-      width: 68px;
-      height: 36px;
+      @include icon-size(68px, 36px);
       background-color: $white-color;
       position: absolute;
       transform: translate(70%, 0%);
@@ -232,11 +209,8 @@
 
     &-text {
       width: 130px;
-      font-size: 13px;
-      font-family: $main-font;
+      @include font(13px, bold, 1.538, $main-font);
       color: $dark-color-second;
-      font-weight: bold;
-      line-height: 1.538;
       z-index: 2;
     }
   }
@@ -247,15 +221,12 @@
   background-color: $accent-color;
   outline: none;
   cursor: pointer;
-  font-size: 11px;
-  font-family: $second-font;
   color: $white-color;
-  font-weight: bold;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.1em;
-  width: 246px;
-  height: 44px;
+  @include font(11px, bold, 1.2, $second-font);
+  @include icon-size(246px, 44px);
 
   &:hover {
     background-color: rgb(211, 85, 38);
@@ -278,8 +249,7 @@
 
   &__icon {
     fill: $accent-color;
-    width: 15px;
-    height: 15px;
+    @include icon-size(15px, 15px);
 
     animation: color-change-2x 1s linear infinite alternate both;
 
@@ -290,16 +260,13 @@
   }
 
   &__text {
-    font-size: 15px;
-    font-family: $main-font;
-    color:$logo-dark-color;
-    font-weight: bold;
+    @include font(15px, bold, 1.2, $main-font);
+    color: $logo-dark-color;
     letter-spacing: 0.05em;
   }
 
   &__description {
-    font-size: 5.3px;
-    font-family: 'Myriad Pro';
+    @include font(5.3px, 400, 1.2, 'Myriad Pro');
     color: $logo-dark-color;
     text-transform: uppercase;
     letter-spacing: 0.13em;
@@ -367,12 +334,9 @@
       &-btn{
         border: solid 2px $accent-color;
         background: transparent;
-        width: 247px;
-        height: 45px;
-        font-size: 11px;
-        font-family: $second-font;
+        @include icon-size(247px, 45px);
+        @include font(11px, bold, 1.2, $second-font);
         color:$accent-color;
-        font-weight: bold;
         text-transform: uppercase;
         cursor: pointer;
         margin-left: 206px;
@@ -389,8 +353,7 @@
       font-size: 25px;
     }
     &__icon{
-      width: 25px;
-      height: 25px;
+      @include icon-size(25px, 25px);
     }
     &__description{
       font-size: 8.75px;          
@@ -463,25 +426,27 @@
   
   .navigation{
     &__menu{
-      display: flex;
-      justify-content: space-between;
+      @include flexible(space-between);
       width: 570px;
+
       &-wrapper{
         align-items: baseline;
       }
+
       &-item{
+
         &:hover .navigation__menu-link {
           color: $accent-color;
         }
       }
+
       &-link{
-        font-size: 12px;
-        font-family: $second-font;
+        @include font(12px, bold, 1.2, $second-font);
         color: $grey-first;
-        font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 0.1em;
       }
+
       &-btn{
         margin-left: 44px;
       }
@@ -525,34 +490,29 @@
       }
         
       &-icon {
-        width: 45px;
-        height: 45px;
+        @include icon-size(45px, 45px);
         transform: translateY(60%);
   
         &-wrapper {
-          width: 103px;
-          height: 103px;
+          @include icon-size(103px, 103px);
         }
       }
 
       &-absolute {
-        width: 140px;
-        height: 73px;
+        @include icon-size(140px, 73px);
         transform: translate(55%, 0%);
       }
 
       &-text {
-        width: 275px;
-        font-size: 18px;
+        @include font-and-width (18px , 275px);
         transform: translate(-21px, 0px);
 
       }
     }
   }
-  .modal-btn{
+  .modal-btn {
     font-size: 12px;
-    width: 296px;
-    height: 64px;
+    @include icon-size(296px, 64px);
   }
 }
 
@@ -592,8 +552,7 @@
       }
 
       &-text{
-        width: 340px;
-        font-size: 21px;
+        @include font-and-width (21px , 340px);
         transform: translate(-18px, 0px);
       }
     }
@@ -611,9 +570,7 @@
       }
     }
   }
-  .modal-btn{
-    font-size: 14px;
-    width: 346px;
-    height: 64px;
+  .modal-btn {
+    @include font-and-width (14px , 64px);
   }
 }
