@@ -14,7 +14,7 @@
 /* flex */
 
 .c-flex--inner {
-    padding: 20px 20px;
+    padding: 20px 0px;
 }
 
 .c-flex {
@@ -62,7 +62,9 @@
     padding-top: 20px;
     position: relative;
     padding-bottom: 25px;
-
+    &__ul{
+        padding: 10px 0;
+    }
     &::before {
         content: "";
         position: absolute;
@@ -74,6 +76,7 @@
     }
 
     &__item {
+        display: flex;
         list-style-type: none;
         position: relative;
         padding-left: 30px;
@@ -100,6 +103,8 @@
 /* desc */
 .teacher{
     padding-top: 130px;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
 }
 .c-desc {
     padding-top: 15px;
@@ -243,6 +248,11 @@
     }
     
 }
+@media (max-width:768px){
+    .c-list__svg{
+        display: none;   
+}
+}
 @media (min-width:600px) and  (max-width:768px){
     .teacher{
         padding-top: 150px;
@@ -253,14 +263,30 @@
         padding-top: 350px;
     }
 }
+@media (min-width:768px){
+    .c-list__svg{
+        fill: $accent-color;
+        margin-right: 5%;
+        max-width: 25px;
+        max-height: 25px;     
+}
+}
 @media(min-width:1280px){
     .teacher{
-        padding-top: 50px;
-    }
-}
+        padding-top: 50px;}
+    .c-list__svg{
+        margin-right: 7%;
+        max-width: 30px;
+        max-height: 30px;     
+     }
+ }
 
 @include for-size(desktop2) {
-
+    .c-list__svg{
+        margin-right: 7%;
+        max-width: 35px;
+        max-height: 35px;     
+     }
     .c-flex {
         flex-direction: row;
         &__left {
