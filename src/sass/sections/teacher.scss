@@ -264,29 +264,38 @@
     }
 }
 @media (min-width:768px){
-    .c-list__svg{
-        fill: $accent-color;
-        margin-right: 5%;
-        max-width: 25px;
-        max-height: 25px;     
-}
+    .c-list{
+        &__span{
+            margin-right: 7%;
+        }
+        &__link{ 
+            @include for-before-and-after();
+            width: 25px;
+            height: 25px;
+            top: 0;   
+        }
+        &__svg{
+            fill: $accent-color;
+            max-width: 25px;
+            max-height: 25px;     
+       }
+       &__svg:hover{
+        fill: $green-color;
+       }
+    }
 }
 @media(min-width:1280px){
     .teacher{
         padding-top: 50px;}
-    .c-list__svg{
-        margin-right: 7%;
-        max-width: 30px;
-        max-height: 30px;     
+    .c-list{
+        &__svg{
+        max-width: 28px;
+        max-height: 28px;  
+        }   
      }
  }
 
 @include for-size(desktop2) {
-    .c-list__svg{
-        margin-right: 7%;
-        max-width: 35px;
-        max-height: 35px;     
-     }
     .c-flex {
         flex-direction: row;
         &__left {
