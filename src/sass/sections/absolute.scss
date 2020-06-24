@@ -63,20 +63,16 @@
             margin-bottom: 1.25rem;
         }
         &::before{
-            position: absolute;
             top: -0.5625rem;
             left:0rem ;
-            content: "";
-            display: block;
+            @include for-before-and-after();
             width: 1.5625rem;
             height: 0.125rem;
             background-color:$accent-color;
         }
         &::after{
-            content: counter(item, decimal-leading-zero) " "; 
+            @include for-before-and-after($content:counter(item, decimal-leading-zero));
             counter-increment: item;
-            display: block;
-            position: absolute;
             left: 2.25rem;
             top: -1rem;
         }
@@ -102,7 +98,6 @@
                 height: 0.1875rem;
             }
             &::after{ 
-                counter-increment: item;
                 top: -1.3rem;
             }
         }
@@ -128,6 +123,9 @@
         font-size: 1.125rem;
         width: 35%;
         margin-bottom: 1.875rem;
+        &::after{ 
+            top: -1.1rem;
+        }
             &:not(:nth-last-child(n+3)){
                 margin-bottom: 0rem;
             }
@@ -148,7 +146,7 @@
         top: -80%;
     }
         &-container{
-            height: 23rem;
+            height: 23.4rem;
             &__for-beckground{
                 background-image: url(../images/tablet/problems/t-problems-background@2x.png);
             }
@@ -161,6 +159,9 @@
             font-size: 1.3125rem;
             color: $dark-color-first;
             margin-right: 3.125rem;
+            &::after{ 
+                top: -1.3rem;
+            }
             &:nth-child(3n){
                 margin-right: 0rem;
             }
@@ -173,6 +174,9 @@
         &__element{
             font-size: 1.6125rem;
             margin-right: 4.375rem;
+            &::after{ 
+                top: -1.5rem;
+            }
          }
      }
 }

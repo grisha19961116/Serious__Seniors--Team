@@ -1,3 +1,8 @@
+@mixin for-before-and-after ($display:block ,$content:'',$position:absolute) {
+  display: $display;
+  content: $content;
+  position: $position;
+}
 @mixin pseudo($width, $height, $content: '') {
   content: $content;
   width: $width;
