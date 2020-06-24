@@ -5,9 +5,7 @@
     background-color: $white-color;
     letter-spacing: 1px;
     &__list::before{
-        display: block;
-        content: "";
-        position: absolute;
+        @include for-before-and-after();
         top: 30px;
         left: 23px;
         width: 2px;
@@ -123,7 +121,7 @@
         }
         &__list::before{
             top: 70px;
-            left: 124px;
+            left: 125px;
             height: 282px;
         }
         &__tube{

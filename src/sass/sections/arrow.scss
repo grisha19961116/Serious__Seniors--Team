@@ -1,0 +1,21 @@
+.arrow-sticky{
+    display: block;
+    height: 200px;
+    width: 70px;
+    position: fixed;
+    z-index: 20;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: $accent-color;
+    top: 80%;
+    right: 2%;
+    &:hover{
+        color:$green-color;
+    }
+    &__svg{
+        display: block;
+        width: 70px;
+        height: 70px;
+    }
+}
