@@ -39,6 +39,7 @@ $(document).ready(function(){
         slidesToScroll: 1,
         arrows: false,
         fade: true,
+        centerMode: true,
         asNavFor: '.slider-nav',
         responsive: [
           {
@@ -71,3 +72,8 @@ $(document).ready(function(){
     $(window).on("resize", function() {
       $(".slider-nav").slick("resize")
     })
+$(document).ready(function () {
+      $(".button__read-more").click(function () {
+          $(this).prev().toggle();
+      });
+});
