@@ -1,94 +1,182 @@
-
 .absolute{
-    padding: 20px 20px 20px 20px;
+    padding: 11% 30% 11% 10%;
     list-style-type: none;
-    counter-reset: list-number;
-    width: 280px;
-    margin: 0 auto;
-    filter: drop-shadow(4px 6.928px 10.5px rgba(29,29,27,0.04));
-    background-color: #ffffff;
-    &__element{
+    counter-reset: item;
+    width: 85%;
+    min-height: 26.25rem;
+    filter: drop-shadow(0.25rem 0.433rem 0.6563rem rgba(29,29,27,0.04));
+    background-color:$white-color;
+    &-programe__img{
+        position: absolute;
+        top: -18%;
+        right: 0%;
+    }
+&__title{
+    position: absolute;
+    z-index: 10;
+    color: $white-color;
+    font-size: 1.25rem;
+}
+    &-problems__title{
+        &--item{
+            color:$accent-color;
+        }
+        width: 60%;
+        top: 4%;
+        left: 6.15%;
+    }
+    &-programe__title{
+        text-align: center;
+        width: 40%;
+        top: -25%;
+        left: 7.5%;
+    }
+    &-container{
+        width: 100%;
+        height: 18.75rem;
+        background-color:$dark-color-first;
         position: relative;
+    }
+    &-programe__list{
+        position: absolute;
+        top: -8%;
+        left: 7.5%;
+        z-index: 5;
+    }
+    &-problems__list{
+        position: absolute;
+        z-index: 5;
+        top: 48%;
+        left: 7.5%;
+    }
+    &__element{
+        display: block;
+        position: relative;
+        width: 88%;
         top: 0;
         left: 0;
-        font-size: 13px;
-        letter-spacing: 1px;
-        line-height: 20px;
-        color: #18191d;
-        font-family: "Montserrat";
+        font-size: 0.8125rem;
+        letter-spacing: 0.0625rem;
+        color:$dark-color-second;
         font-weight: 700;
         &:not(:last-child){
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
         }
         &::before{
-            position: absolute;
-            top: -10px;
-            left:0px ;
-            content: "";
-            display: block;
-            width: 25px;
-            height: 2px;
-            background-color: #ff6b08;
+            top: -0.5625rem;
+            left:0rem ;
+            @include for-before-and-after();
+            width: 1.5625rem;
+            height: 0.125rem;
+            background-color:$accent-color;
         }
         &::after{
-            counter-increment: list-number;
-            content: counter(list-number);
-            display: block;
-            position: absolute;
-            left: 36px;
-            top: -20px;
+            @include for-before-and-after($content:counter(item, decimal-leading-zero));
+            counter-increment: item;
+            left: 2.25rem;
+            top: -1rem;
         }
     }
 }
 @media (min-width: 768px){
     .absolute{
-        padding: 30px 0px;
+        &-container{
+            height: 15.625rem;
+        }
+        &-programe__list{
+            top: 22%;
+        }
+            &-programe__title{
+        text-align: center;
+        width: 50%;
+        top: 4%;
+        left: 25%;
+    }
+        &__element{
+            &::before{
+                width: 1.875rem;
+                height: 0.1875rem;
+            }
+            &::after{ 
+                top: -1.3rem;
+            }
+        }
+        min-height: 32.75rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        width: 680px;
+        &-container__for-beckground{
+            background-image: url(../images/tablet/problems/t-problems-background.png);
+            background-repeat: no-repeat;
+            background-position: right ;
+        }
+        &__title{
+            font-size: 1.625rem;
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 1279px){
+    .absolute{
+        padding: 4.5% 0%;
+        width: 85%;
         &__element{
-        font-size: 18px;
-        line-height: 29px;
-        color: #18191d;
-        font-family: "Montserrat";
-        font-weight: 700;
-        width: 260px;
-        margin-bottom: 30px;
+        font-size: 1.125rem;
+        width: 35%;
+        margin-bottom: 1.875rem;
+        &::after{ 
+            top: -1.1rem;
+        }
             &:not(:nth-last-child(n+3)){
-                margin-bottom: 0px;
+                margin-bottom: 0rem;
             }
             &:nth-child(odd){
-                margin-right: 50px;
+                margin-right: 3.125rem;
             }
         }
     }
 }
 @media (min-width: 1280px){
     .absolute{
-        padding: 100px 50px;
-        display: flex;
-        flex-wrap: wrap;
-        font-size: 21px;
-        color: #111517;
-        width: 1200px;
+        min-height: 36.75rem;
+        padding: 6.25rem 3.125rem;
+        &-programe__list{
+            top: -57%;
+        }
+            &-programe__title{
+        top: -80%;
+    }
+        &-container{
+            height: 23.4rem;
+            &__for-beckground{
+                background-image: url(../images/tablet/problems/t-problems-background@2x.png);
+            }
+        }
+        &__title{
+            font-size: 2.875rem;
+        }
         &__element{
-            width: 300px;
+            width: 28%;
+            font-size: 1.3125rem;
+            color: $dark-color-first;
+            margin-right: 3.125rem;
+            &::after{ 
+                top: -1.3rem;
+            }
             &:nth-child(3n){
-                margin-right: 0px;
+                margin-right: 0rem;
             }
         }
     }
 }
 @media (min-width: 1680px){
     .absolute{
-        padding: 100px 50px;
-        display: flex;
-        flex-wrap: wrap;
-        
-        width: 1340px;
+        padding: 6.25rem 3.125rem;
         &__element{
-            width: 300px;
-        }
-    }
+            font-size: 1.6125rem;
+            margin-right: 4.375rem;
+            &::after{ 
+                top: -1.5rem;
+            }
+         }
+     }
 }

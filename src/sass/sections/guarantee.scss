@@ -1,0 +1,130 @@
+.guarantee{
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 10%;
+    background-color: $white-color;
+    letter-spacing: 1px;
+    &__list::before{
+        @include for-before-and-after();
+        top: 30px;
+        left: 23px;
+        width: 2px;
+        height: 67%;
+        background-image: linear-gradient(180deg, #959595, #959595 75%, transparent 75%, transparent 100%);
+        background-size: 20px 4px;
+        border: none;
+    }
+    &__link-icon{
+        position: absolute;
+        top: 0;
+        left: -34px;
+    }
+    &__svg{
+        fill: $accent-color;
+        width: 16px;
+        height: 16px;
+        &:hover{
+            fill:$green-color;
+            border-radius: 50%;
+            box-shadow: 0px 0px 3px 6px rgba(131, 119, 68, 0.808);
+        }
+    }
+    &__title{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 26px;
+        font-size: 20px;
+        color: $dark-color-first;
+        font-weight: 800;
+        text-align: center;
+    }
+    &__tube{
+        position: relative;
+        background-color: $white-dark-color;
+        padding: 26px 26px 26px 50px ;
+    }
+    &__list-item{
+        position: relative;
+        font-size: 11px;
+        color:$dark-color-second;
+        font-weight: 500;
+        &:not(:last-child){
+            margin-bottom: 26px;
+        }
+        &-description-span--orange-color{
+            color: $accent-color;
+        }
+    }
+}
+@media (min-width:768px){
+    .guarantee{
+        width: 85%;
+        padding-top: 6%;
+        &__list-item{
+            font-size: 13px;
+            max-width: 770px;}
+        &__list::before{
+            top: 40px;
+            left: 39px;
+        }
+        &__link-icon{
+            left: -68px;
+        }
+        &__title{
+            font-size: 26px;
+        }
+        &__tube{
+            padding: 40px 50px 30px 100px;
+        }
+        
+    }
+
+}
+@media (min-width:1280px){
+    .guarantee{
+        &__list-item{
+            font-size: 17px;
+            max-width: 1000px;
+        }
+        &__list::before{
+            top: 70px;
+            left: 96px;
+            height: 65%;
+        }
+        &__svg{
+            width: 30px;
+            height: 30px;
+        }
+        &__title{
+            font-size: 46px;
+            letter-spacing: 2px;
+        }
+        &__tube{
+            padding: 60px 130px 50px 150px;
+        }
+        &__list-item{
+            font-size: 21px;
+            &:not(:last-child){
+                margin-bottom: 40px;
+            }
+
+        }
+        
+    }
+
+}
+@media (min-width:1680px){
+    .guarantee{
+        &__list-item{
+            font-size: 21px;
+        }
+        &__list::before{
+            top: 70px;
+            left: 125px;
+            height: 282px;
+        }
+        &__tube{
+            padding: 60px 180px 50px 180px;
+        }
+     }
+ }

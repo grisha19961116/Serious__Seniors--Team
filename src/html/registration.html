@@ -1,5 +1,5 @@
-<section class="registration">
-  <div class="registration__wrapper container">
+<section id="reg" class="registration">
+  <div class="registration__wrapper">
     <h2 class="registration__title">
       Регистрация на
       <span class="accent-text">бесплатную </span>телефонную<span
@@ -12,10 +12,18 @@
     <p class="registration__decription">
       Оставь заявку на участие в
       <span class="accent-text">бесплатном занятии.</span>
-      С вами свяжется консультант и ответит на вопросы.
+      <span class="registration__decription--br"
+        >С вами свяжется консультант и ответит на вопросы.</span
+      >
     </p>
-    <form action="#" class="contact__form">
+    <form
+      id="ajax_form"
+      action="./form/telegram.php"
+      method="POST"
+      class="contact__form"
+    >
       <input
+        id="user_name"
         name="user_name"
         type="text"
         class="contact__form-input"
@@ -24,13 +32,16 @@
         minlength="2"
       />
       <input
+        id="user_phone"
         name="user_phone"
         type="tel"
         class="contact__form-input contact__form-input--phone"
         placeholder="Телефон *"
         required
       />
-      <button class="contact__form-btn">хочу на бесплатное занятие</button>
+      <button type="submit" class="modal-btn" id="modal-btn">
+        хочу на бесплатное занятие
+      </button>
     </form>
   </div>
 </section>

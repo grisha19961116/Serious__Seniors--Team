@@ -1,0 +1,111 @@
+
+.footer{
+    width: 100%;
+    &__links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0px 40px 0px;
+    }
+    &__instagram-icon-svg{
+        width: 37px;
+        height: 37px;
+    }
+&__telephone{
+    &-link:hover{
+        & .footer__telephone{
+            color: $green-color;
+            box-shadow: 10px 5px 5px rgb(7, 189, 7);
+            &-icon{
+                fill:$dark-color-first;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: $dark-color-first;
+    font-weight: 600;    
+    &-icon{
+        width: 21px;
+        height: 27px;
+        fill:  orange;
+    }
+}
+    &__second{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: $dark-color-first;
+        &-text{
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #fdfefe;            
+            font-weight: 500;
+        }
+    }
+}
+@media (max-width:768px){
+    .footer{
+        &__telephone-link,&__instagram-icon{
+            margin-bottom: 30px;
+        }
+    }
+}
+@media (min-width:768px){
+    .logo__fotter{
+        order: 1;
+        margin-right: 15%;
+        margin-left: 5%;
+    }
+    .footer{
+        flex-direction: row;
+        justify-content: space-between;
+        &__telephone{
+            font-size: 21px;
+            &-link{
+                order: 2;
+                margin-right: 15%;
+            }
+        }
+        &__instagram-icon{
+            order: 3;
+        }
+        &__links{
+            height: 120px;
+            flex-direction: row;
+            justify-content: left;
+            padding: 40px 40px 40px 40px;
+        }
+        &__second{
+            font-size: 15px;
+            justify-content: start;
+            padding-left: 40px;
+            height: 70px;
+            
+        }
+    }
+}
+@media (min-width:1280px){
+    .footer{
+        &__telephone{
+            font-size: 27px;
+        }
+        &__links{
+            height: 150px;
+        }
+        &__second{
+            font-size: 18px;
+            justify-content: start;
+            padding-left: 180px;
+            height: 70px;
+            
+        }
+    }
+}

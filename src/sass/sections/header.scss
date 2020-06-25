@@ -1,0 +1,587 @@
+.navigation {
+  @include flexible(space-between);
+  align-items: baseline;
+  margin-bottom: 58px;  
+}
+
+#menu__toggle {
+  opacity: 0;
+
+  &:checked ~ .menu__btn > .burg {
+    @include menu-checked(rotate(45deg), $white-dark-color);
+  }
+
+  &:checked ~ .menu__btn > .burg::before {
+    top: 0;
+    @include menu-checked(rotate(0), $white-dark-color);
+  }
+
+  &:checked ~ .menu__btn > .burg::after {
+    top: 0;
+    @include menu-checked(rotate(90deg), $white-dark-color);
+  }
+
+  &:checked ~ .burger__menu-wrapper {
+    visibility: visible;
+  }
+}
+
+.logo-for-burger {
+  position: absolute;
+  text-align: left;
+}
+.logo-for-burger .logo__text {
+  color: $white-color;
+}
+
+.logo-for-burger .logo__description {
+  color: $white-color;
+}
+.menu__btn {
+  display: block;
+  position: relative;
+  top: -5px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.burg {
+  @include icon-size(24px, 2px);
+  background-color: $dark-color-second;
+
+  &::before {
+    display: block;
+    @include pseudo(24px, 2px);
+    background-color: $dark-color-second;
+    position: absolute;
+    top: -5px;
+
+    transition-duration: 0.2s;
+  }
+  &::after {
+    display: block;
+    @include pseudo(24px, 2px);
+    background-color: $dark-color-second;
+    position: absolute;
+    top: 5px;
+
+    transition-duration: 0.2s;
+  }
+}
+
+.burger {
+  &__menu {
+    &-wrapper {
+      display: block;
+      position: absolute;
+      visibility: hidden;
+      top: 0;
+      right: 0;
+      @include icon-size(100%, 100%);
+      padding-top: 115px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.86);
+      z-index: 2;
+    }
+
+    &-link {
+      display: block;
+      @include font(18px, bold, 1.2, $second-font);
+      color: $white-color;
+      text-align: left;
+      letter-spacing: 0.1em;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      &:hover .burger__menu-link {
+        color: $accent-color;
+      }
+    }
+
+    &-btn {
+      border: solid 2px $white-color;
+      background: transparent;
+      @include icon-size(247px, 45px);
+      @include font(11px, bold, 1.2, $second-font);
+      color: $white-color;
+      text-transform: uppercase;
+
+      &:hover {
+        border-color:$accent-color;
+        color:$accent-color;
+      }
+    }
+  }
+}
+
+
+.header {
+  background-image: url(../../images/mobile/header/m-header-background.jpg);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 26px;
+  padding-bottom: 50px;
+
+  &-wrapper {
+    display: flex;
+    margin-bottom: 87px;
+  }
+
+  @media (min-resolution: 192dpi) {
+    background-image: url(../../images/mobile/header/m-header-background@2x.jpg);
+  }
+
+  &__titel {
+    @include font(20px, bold, 1.45, $main-font);
+    color: $dark-color-second;
+    margin-bottom: 32px;
+    letter-spacing: 0.03em;
+  }
+
+  &__description {
+    @include font(15px, bold, 1.355, $main-font);
+    color: $dark-color-second;
+    letter-spacing: 0.05em;
+
+    &--margbot1{
+      margin-bottom: 6px;
+    }
+
+    &--margbot2 {
+      margin-bottom: 39px;
+    }
+
+    &--grey {
+      color: $grey-first;
+      font-weight: 500;
+    }
+
+    &--orange {
+      color:$accent-color;
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    &-item {
+      @include flexible(space-between);
+      align-items: center;
+      width: 200px;
+
+      &:hover .header__list-icon{
+        animation: pulsate-bck 1s ease-in-out infinite both;
+        fill: $green-color;
+      }
+      &:hover .header__list-icon-wrapper{
+        border-color: $green-color;
+      }
+    }
+
+    &-icon {
+      fill: $accent-color;
+      @include icon-size(31px, 35px);
+      transform: translateY(25%);
+
+      transition: fill 0.2s linear;
+
+      &-wrapper {
+        border: solid 2px $accent-color;
+        @include icon-size(54px, 54px);
+        text-align: center;
+        position: relative;
+
+        transition: all 0.2s linear;
+      }
+    }
+
+    &-absolute {
+      @include icon-size(68px, 36px);
+      background-color: $white-color;
+      position: absolute;
+      transform: translate(70%, 0%);
+    }
+
+    &-text {
+      width: 130px;
+      @include font(13px, bold, 1.538, $main-font);
+      color: $dark-color-second;
+      z-index: 2;
+    }
+  }
+}
+
+.modal-btn {
+  border: none;
+  background-color: $accent-color;
+  outline: none;
+  cursor: pointer;
+  color: $white-color;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1em;
+  @include font(11px, bold, 1.2, $second-font);
+  @include icon-size(246px, 44px);
+
+  &:hover {
+    background-color: rgb(211, 85, 38);
+  }
+}
+
+.under {
+  display: block;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+  &:hover{
+    animation: heartbeat 1.5s ease-in-out infinite both;
+  }
+
+  &__icon {
+    fill: $accent-color;
+    @include icon-size(15px, 15px);
+
+    animation: color-change-2x 1s linear infinite alternate both;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    @include font(15px, bold, 1.2, $main-font);
+    color: $logo-dark-color;
+    letter-spacing: 0.05em;
+  }
+
+  &__description {
+    @include font(5.3px, 400, 1.2, 'Myriad Pro');
+    color: $logo-dark-color;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+
+    &--orange {
+      color: $accent-color;
+    }
+  }
+}
+
+/* MOBILE @MEDIA */
+
+@media (max-width: 767px) {
+
+  .navigation__menu-wrapper{
+    display: none;
+  }
+
+  .burger {
+    &__menu {
+      margin-bottom: 55px;
+      padding-left: 27px;
+    }
+  }
+  .logo-for-burger {
+    top: 26px;
+  }
+  
+  .header {
+    &-wrapper{
+      flex-direction: column;
+      align-items: center;
+    }
+    &__titel {
+      &-wrapper {
+        margin-bottom: 36px;
+      }
+    }
+    &__list {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &:not(:last-child) {
+        margin-bottom: 22px;
+      }
+    }
+  }
+  .modal-btn--center{
+    text-align: center;
+  }
+}
+
+@media (max-width: 1279px){
+  .under-mobile{
+    display: block;
+  }
+}
+
+/* TABLET @MEDIA */
+
+@media (min-width: 768px) {
+
+  .navigation{
+
+    &__menu{
+      display: none;
+
+      &-btn{
+        border: solid 2px $accent-color;
+        background: transparent;
+        @include icon-size(247px, 45px);
+        @include font(11px, bold, 1.2, $second-font);
+        color:$accent-color;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-left: 206px;
+
+        &:hover {
+          animation: jello-horizontal 0.9s both;
+          border-color: $green-color;
+        }
+      }
+
+      &-wrapper{
+        display: flex;       
+      }
+    }
+  }
+
+  .logo{
+    &__text{
+      font-size: 25px;
+    }
+    &__icon{
+      @include icon-size(25px, 25px);
+    }
+    &__description{
+      font-size: 8.75px;          
+    }
+  }
+  
+  .burger {
+    &__menu {
+      padding-left: 200px;
+
+      &-link {
+        font-size: 26px;
+        font-weight: bold;
+      }
+
+      &-btn {
+        display: none;
+      }
+    }
+  }
+  .logo-for-burger {
+    top: 40px;
+  }
+
+  .header {
+    padding-top: 37px;
+    background-image: url(../../images/tablet/header/t-header-background.jpg);
+    
+    @media (min-resolution: 192dpi) {
+      background-image: url(../../images/tablet/header/t-header-background@2x.jpg);
+    }
+
+    &-wrapper {
+      justify-content: space-between;
+      margin-bottom: 117px;
+    }
+
+    &__picture-wrapper{
+      width: 370px;
+      &-img{
+        max-width: 100%;
+      }
+    }
+
+    &__titel {
+      font-size: 26px;
+      line-height: 1.269;
+      margin-bottom: 29px;
+    }
+
+    &__description {
+      &--margbot2 {
+        margin-bottom: 37px;
+      }
+    }
+
+    &__list {
+      justify-content: space-between;
+    }
+  }
+  .under-tablet {
+    display: block;
+  }
+}
+
+/* DESKTOP @MEDIA */
+
+@media (min-width: 1280px){
+
+  .burger{
+    display: none;
+  }
+  
+  .navigation{
+    &__menu{
+      @include flexible(space-between);
+      width: 570px;
+
+      &-wrapper{
+        align-items: baseline;
+      }
+
+      &-item{
+
+        &:hover .navigation__menu-link {
+          color: $accent-color;
+        }
+      }
+
+      &-link{
+        @include font(12px, bold, 1.2, $second-font);
+        color: $grey-first;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      &-btn{
+        margin-left: 44px;
+      }
+    }
+  }
+  .header {
+    padding-bottom: 86px;
+    background-image: url(../../images/desktop/header/d-header-background.jpg);
+     
+    @media (min-resolution: 192dpi) {
+      background-image: url(../../images/desktop/header/d-header-background@2x.jpg);
+    }
+
+    &-wrapper {
+      margin-bottom: 129px;
+    }
+    
+    &__picture-wrapper{
+      width: 685px;
+    }
+
+    &__titel {      
+      font-size: 48px;
+      line-height: 1.208;
+      margin-bottom: 35px;
+    }
+
+    &__description {
+      font-size: 18px;
+      
+      &--margbot2 {
+        margin-bottom: 67px;
+        }
+    }
+
+    &__list {
+      position: relative;
+
+      &-item {
+        width: 380px;
+      }
+        
+      &-icon {
+        @include icon-size(45px, 45px);
+        transform: translateY(60%);
+  
+        &-wrapper {
+          @include icon-size(103px, 103px);
+        }
+      }
+
+      &-absolute {
+        @include icon-size(140px, 73px);
+        transform: translate(55%, 0%);
+      }
+
+      &-text {
+        @include font-and-width (18px , 275px);
+        transform: translate(-21px, 0px);
+
+      }
+    }
+  }
+  .modal-btn {
+    font-size: 12px;
+    @include icon-size(296px, 64px);
+  }
+}
+
+
+/* DESKTOP XL @MEDIA */
+
+@media (min-width: 1680px){
+  .header {
+    padding-top: 28px;
+    padding-bottom: 127px;
+    background-image: url(../../images/desktop-xl/header/d-header-background.png);
+     
+    @media (min-resolution: 192dpi) {
+      background-image: url(../../images/desktop-xl/header/d-header-background@2x.png);
+    }
+
+    &__picture-wrapper{
+      width: 610px;
+    }
+
+    &__titel {      
+      font-size: 58.333px;
+      line-height: 1.3;
+      margin-bottom: 35px;
+    }
+
+    &__description {
+      font-size: 21px;
+      
+      &--margbot2 {
+        margin-bottom: 46px;
+        }
+    }
+    &__list{
+      &-item{
+        width: 430px;
+      }
+
+      &-text{
+        @include font-and-width (21px , 340px);
+        transform: translate(-18px, 0px);
+      }
+    }
+  }
+  .navigation{
+    &__menu{
+      width: 675px;
+
+      &-link{
+        font-size: 14px;
+      }
+
+      &-btn{
+        margin-left: 57px;
+      }
+    }
+  }
+  .modal-btn {
+    @include font-and-width (14px , 64px);
+  }
+}
