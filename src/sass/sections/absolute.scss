@@ -78,6 +78,11 @@
         }
     }
 }
+@media (max-width: 768px){
+    .absolute-problems__list{
+        top: 50%;
+    }
+}
 @media (min-width: 768px){
     .absolute{
         &-container{
