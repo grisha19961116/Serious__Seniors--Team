@@ -1,118 +1,119 @@
-<div id="header" class="header">
-    <div class="container">
-        <div class="navigation">
-            <div class="logo-wrapper">
-                <a href="#" class="logo">
-                    <div class="logo__icon-wrapper">
-                        <span class="logo__text">Hell</span>
-                        <svg class="logo__icon">
-                            <use href="./images/icons/sprite.svg#campfire"></use>
-                        </svg>
-                        <span class="logo__text">EN</span>
-                    </div>
-                    <span class="logo__description"><span class="logo__description--orange">адский</span>
-                        английский</span>
-                </a>
-            </div>
-            <div class="navigation__menu-wrapper">
-                <ul class="navigation__menu">
-                    <li class="navigation__menu-item"><a href="#prog" class="navigation__menu-link">программа обучения</a></li>
-                    <li class="navigation__menu-item"><a href="#about-us" class="navigation__menu-link">о нас</a></li>
-                    <li class="navigation__menu-item"><a href="#options" class="navigation__menu-link">варианты обучения</a></li>
-                    <li class="navigation__menu-item"><a href="#contacts" class="navigation__menu-link">контакты</a></li>
-                </ul>
-                <button class="navigation__menu-btn" onclick="location.href='#reg'">консультация по телефону</button>
-            </div>
-            <div class="burger">
-                <input id="menu__toggle" type="checkbox" />
-                <label class="menu__btn" for="menu__toggle">
-                    <div class="burg"></div>
-                </label>
-                <div class="burger__menu-wrapper">
-                    <div class="container">
-                        <div class="logo-for-burger">
-                            <div class="logo-wrapper">
-                                <a href="#" class="logo">
-                                    <div class="logo__icon-wrapper">
-                                        <span class="logo__text">Hell</span>
-                                        <svg class="logo__icon">
-                                            <use href="./images/icons/sprite.svg#campfire"></use>
-                                        </svg>
-                                        <span class="logo__text">EN</span>
-                                    </div>
-                                    <span class="logo__description"><span
-                                            class="logo__description--orange">адский</span>
-                                        английский</span>
-                                </a>
-                            </div>
-                        </div>
-                        <ul class="burger__menu">
-                            <li class="burger__menu-item"><a class="burger__menu-link" href="#prog">Программа обучения</a>
-                            </li>
-                            <li class="burger__menu-item"><a class="burger__menu-link" href="#about-us">О нас</a></li>
-                            <li class="burger__menu-item"><a class="burger__menu-link" href="#options">Варианты обучения</a>
-                            </li>
-                            <li class="burger__menu-item"><a class="burger__menu-link" href="#contacts">Контакты</a></li>
-                        </ul>
-                        <button class="burger__menu-btn" onclick="location.href='#reg'">консультация по телефону</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-wrapper">
-            <div class="header__titel-wrapper">
-                <h1 class="header__titel">Комплексная
-                    <span class="under">подготовка к ВНО</span>
-                    <span class="under">по английскому <span class="under-tablet">языку</span></span>
-                </h1>
-                <p class="header__description header__description--margbot1 header__description--grey">Просто не будет.</p>
-                <p class="header__description header__description--margbot2">Но ты гарантировано наберешь <span
-                        class="under-mobile header__description--orange">+25
-                        баллов</span></p>
-                <div class="modal-btn--center"><button class="modal-btn" onclick="location.href='#reg'">Хочу на бесплатное занятие</button></div>
-            </div>
-            <div class="header__picture-wrapper">
-                <picture class="header__picture">
-                    <source media="(max-width: 767px)"
-                        srcset="./images/mobile/header/m-header-picture.png 380w, ./images/mobile/header/m-header-picture@2x.png 760w">
-                    <source media="(min-width: 768px)"
-                        srcset="./images/tablet/header/t-header-picture.png 380w, ./images/tablet/header/t-header-picture@2x.png 760w">
-                    <source media="(min-width: 1280px)"
-                        srcset="./images/desktop/header/d-header-picture 380w, ./images/desktop/header/d-header-picture@2x.png 760w">
-                    <source media="(min-width: 1680px)"
-                        srcset="./images/desktop-xl/header/d-header-picture 380w, ./images/desktop-xl/header/d-header-picture@2x.png 760w">
-                    <img class="header__picture-wrapper-img" src="./images/mobile/header/m-header-picture.png 380w" alt="header__picture">
-                </picture>
-            </div>
-        </div>
-        <ul class="header__list">
-            <li class="header__list-item">
-                <div class="header__list-icon-wrapper">
-                    <svg class="header__list-icon">
-                        <use href="./images/icons/sprite.svg#female-student"></use>
-                    </svg>
-                </div>
-                <div class="header__list-absolute"></div>
-                <p class="header__list-text">Адаптированная авторская программа ВНО</p>
-            </li>
-            <li class="header__list-item">
-                <div class="header__list-icon-wrapper">
-                    <svg class="header__list-icon">
-                        <use href="./images/icons/sprite.svg#mobile-learning"></use>
-                    </svg>
-                </div>
-                <div class="header__list-absolute"></div>
-                <p class="header__list-text">Современные методики обучения</p>
-            </li>
-            <li class="header__list-item">
-                <div class="header__list-icon-wrapper">
-                    <svg class="header__list-icon">
-                        <use href="./images/icons/sprite.svg#insurance"></use>
-                    </svg>
-                </div>
-                <div class="header__list-absolute"></div>
-                <p class="header__list-text">Финансовая гарантия результата</p>
-            </li>
+<div id="header" class="header animate__animated animate__bounceInLeft">
+  <div class="container">
+    <div class="navigation">
+      <div class="logo-wrapper">
+        <a href="#" class="logo">
+          <div class="logo__icon-wrapper">
+            <span class="logo__text">Hell</span>
+            <svg class="logo__icon">
+              <use href="./images/icons/sprite.svg#campfire"></use>
+            </svg>
+            <span class="logo__text">EN</span>
+          </div>
+          <span class="logo__description"><span class="logo__description--orange">адский</span>
+            английский</span>
+        </a>
+      </div>
+      <div class="navigation__menu-wrapper">
+        <ul class="navigation__menu">
+          <li class="navigation__menu-item"><a href="#prog" class="navigation__menu-link">программа обучения</a></li>
+          <li class="navigation__menu-item"><a href="#about-us" class="navigation__menu-link">о нас</a></li>
+          <li class="navigation__menu-item"><a href="#options" class="navigation__menu-link">варианты обучения</a></li>
+          <li class="navigation__menu-item"><a href="#contacts" class="navigation__menu-link">контакты</a></li>
         </ul>
+        <button class="navigation__menu-btn" onclick="location.href='#reg'">консультация по телефону</button>
+      </div>
+      <div class="burger">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <div class="burg"></div>
+        </label>
+        <div class="burger__menu-wrapper">
+          <div class="container">
+            <div class="logo-for-burger">
+              <div class="logo-wrapper">
+                <a href="#" class="logo">
+                  <div class="logo__icon-wrapper">
+                    <span class="logo__text">Hell</span>
+                    <svg class="logo__icon">
+                      <use href="./images/icons/sprite.svg#campfire"></use>
+                    </svg>
+                    <span class="logo__text">EN</span>
+                  </div>
+                  <span class="logo__description"><span class="logo__description--orange">адский</span>
+                    английский</span>
+                </a>
+              </div>
+            </div>
+            <ul class="burger__menu">
+              <li class="burger__menu-item"><a class="burger__menu-link" href="#prog">Программа обучения</a>
+              </li>
+              <li class="burger__menu-item"><a class="burger__menu-link" href="#about-us">О нас</a></li>
+              <li class="burger__menu-item"><a class="burger__menu-link" href="#options">Варианты обучения</a>
+              </li>
+              <li class="burger__menu-item"><a class="burger__menu-link" href="#contacts">Контакты</a></li>
+            </ul>
+            <button class="burger__menu-btn" onclick="location.href='#reg'">консультация по телефону</button>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="header-wrapper">
+      <div class="header__titel-wrapper">
+        <h1 class="header__titel">Комплексная
+          <span class="under">подготовка к ВНО</span>
+          <span class="under">по английскому <span class="under-tablet">языку</span></span>
+        </h1>
+        <p class="header__description header__description--margbot1 header__description--grey">Просто не будет.</p>
+        <p class="header__description header__description--margbot2">Но ты гарантировано наберешь <span
+            class="under-mobile header__description--orange">+25
+            баллов</span></p>
+        <div class="modal-btn--center"><button class="modal-btn" onclick="location.href='#reg'">Хочу на бесплатное
+            занятие</button></div>
+      </div>
+      <div class="header__picture-wrapper">
+        <picture class="header__picture">
+          <source media="(max-width: 767px)"
+            srcset="./images/mobile/header/m-header-picture.png 380w, ./images/mobile/header/m-header-picture@2x.png 760w">
+          <source media="(min-width: 768px)"
+            srcset="./images/tablet/header/t-header-picture.png 380w, ./images/tablet/header/t-header-picture@2x.png 760w">
+          <source media="(min-width: 1280px)"
+            srcset="./images/desktop/header/d-header-picture 380w, ./images/desktop/header/d-header-picture@2x.png 760w">
+          <source media="(min-width: 1680px)"
+            srcset="./images/desktop-xl/header/d-header-picture 380w, ./images/desktop-xl/header/d-header-picture@2x.png 760w">
+          <img class="header__picture-wrapper-img" src="./images/mobile/header/m-header-picture.png 380w"
+            alt="header__picture">
+        </picture>
+      </div>
+    </div>
+    <ul class="header__list">
+      <li class="header__list-item">
+        <div class="header__list-icon-wrapper">
+          <svg class="header__list-icon">
+            <use href="./images/icons/sprite.svg#female-student"></use>
+          </svg>
+        </div>
+        <div class="header__list-absolute"></div>
+        <p class="header__list-text">Адаптированная авторская программа ВНО</p>
+      </li>
+      <li class="header__list-item">
+        <div class="header__list-icon-wrapper">
+          <svg class="header__list-icon">
+            <use href="./images/icons/sprite.svg#mobile-learning"></use>
+          </svg>
+        </div>
+        <div class="header__list-absolute"></div>
+        <p class="header__list-text">Современные методики обучения</p>
+      </li>
+      <li class="header__list-item">
+        <div class="header__list-icon-wrapper">
+          <svg class="header__list-icon">
+            <use href="./images/icons/sprite.svg#insurance"></use>
+          </svg>
+        </div>
+        <div class="header__list-absolute"></div>
+        <p class="header__list-text">Финансовая гарантия результата</p>
+      </li>
+    </ul>
+  </div>
 </div>
