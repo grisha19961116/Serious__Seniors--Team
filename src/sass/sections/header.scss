@@ -172,7 +172,7 @@
     &-item {
       @include flexible(space-between);
       align-items: center;
-      width: 200px;
+      width: 190px;
 
       &:hover .header__list-icon{
         animation: pulsate-bck 1s ease-in-out infinite both;
@@ -213,23 +213,6 @@
       color: $dark-color-second;
       z-index: 2;
     }
-  }
-}
-
-.modal-btn {
-  border: none;
-  background-color: $accent-color;
-  outline: none;
-  cursor: pointer;
-  color: $white-color;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 0.1em;
-  @include font(11px, bold, 1.2, $second-font);
-  @include icon-size(246px, 44px);
-
-  &:hover {
-    background-color: rgb(211, 85, 38);
   }
 }
 
@@ -521,10 +504,6 @@
       }
     }
   }
-  .modal-btn {
-    font-size: 12px;
-    @include icon-size(296px, 64px);
-  }
 }
 
 
@@ -580,8 +559,5 @@
         margin-left: 57px;
       }
     }
-  }
-  .modal-btn {
-    @include font-and-width (14px , 64px);
   }
 }
